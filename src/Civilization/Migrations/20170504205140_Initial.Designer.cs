@@ -8,7 +8,7 @@ using Civilization.Models;
 namespace Civilization.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170504165757_Initial")]
+    [Migration("20170504205140_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,22 @@ namespace Civilization.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("Civilization.Models.Game", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Geography");
+
+                    b.Property<string>("Government");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Games");
                 });
 
             modelBuilder.Entity("Civilization.Models.User", b =>

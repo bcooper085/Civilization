@@ -205,8 +205,8 @@ C:\Users\epicodus\Desktop\Civilization\src\Civilization\Program.cs
 C:\Users\epicodus\Desktop\Civilization\src\Civilization\Startup.cs
 C:\Users\epicodus\Desktop\Civilization\src\Civilization\Controllers\AccountController.cs
 C:\Users\epicodus\Desktop\Civilization\src\Civilization\Controllers\HomeController.cs
-C:\Users\epicodus\Desktop\Civilization\src\Civilization\Migrations\20170504165757_Initial.cs
-C:\Users\epicodus\Desktop\Civilization\src\Civilization\Migrations\20170504165757_Initial.Designer.cs
+C:\Users\epicodus\Desktop\Civilization\src\Civilization\Migrations\20170504205140_Initial.cs
+C:\Users\epicodus\Desktop\Civilization\src\Civilization\Migrations\20170504205140_Initial.Designer.cs
 C:\Users\epicodus\Desktop\Civilization\src\Civilization\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\epicodus\Desktop\Civilization\src\Civilization\Models\ApplicationDbContext.cs
 C:\Users\epicodus\Desktop\Civilization\src\Civilization\Models\Event.cs

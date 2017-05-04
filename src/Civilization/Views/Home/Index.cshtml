@@ -1,9 +1,30 @@
 ﻿@{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Log In";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4 class="display-game">Click To Start</h4>
+<form action="GameStart" class="game-start">
+    Civilization Name:<input type="text" name="name">
+
+    <select name="govlist" form="GameStart">
+        <option value="select">Select</option>
+        <option value="communism">Communism</option>
+        <option value="democracy">Democracy</option>
+    </select>
+
+    <select name="geoglist" form="GameStart">
+        <option value="select">Select</option>
+        <option value="coastal">Coastal</option>
+        <option value="desert">Desert</option>
+    </select>
+    <input type="submit">
+</form>
+
+<hr />
+<h2>Civilization</h2>
+<form action="RandomEventList" class="display-random-event">
+    <input type="hidden" name="eventStart" value="1"/>
+    <button type="submit">Play</button>
+</form>
 <div id="result1"></div>
-
-
+<div id="result2"></div>

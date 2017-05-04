@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Civilization.Models
 {
+    [Table("Games")]
     public class Game
     {
         public string Name { get; set; }
@@ -19,6 +20,10 @@ namespace Civilization.Models
             Government = government;
             Geography = geography;
             Id = id;
+        }
+
+        public Game()
+        {
         }
     }
 }

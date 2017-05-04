@@ -30,6 +30,22 @@ namespace Civilization.Migrations
                     b.ToTable("Events");
                 });
 
+            modelBuilder.Entity("Civilization.Models.Game", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Geography");
+
+                    b.Property<string>("Government");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Games");
+                });
+
             modelBuilder.Entity("Civilization.Models.User", b =>
                 {
                     b.Property<string>("Id");

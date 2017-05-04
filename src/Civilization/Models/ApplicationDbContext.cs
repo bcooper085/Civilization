@@ -9,11 +9,9 @@ namespace Civilization.Models
 {
     public class ApplicationDbContext : IdentityDbContext<User>
     {
-        public ApplicationDbContext(DbContextOptions options) : base(options)
-        {
-
-        }
-
+        public ApplicationDbContext() { }
+        public virtual DbSet<Game> Games { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Civilization;integrated security=True");
