@@ -9,6 +9,7 @@ using Civilization.ViewModels;
 
 namespace Civilization.Controllers
 {
+
     public class AccountController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -33,20 +34,20 @@ namespace Civilization.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(string username, string password)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            var user = new User { UserName = username };
-            IdentityResult result = await _userManager.CreateAsync(user, password);
+            var user = new User { UserName = model.Email };
+            IdentityResult result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index" ,"Home");
             }
             else
             {
                 return View();
             }
-
         }
+
         public IActionResult Login()
         {
             return View();
@@ -58,12 +59,13 @@ namespace Civilization.Controllers
             Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
                 return View();
             }
+
         }
 
         [HttpPost]
@@ -72,8 +74,8 @@ namespace Civilization.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
         }
-
     }
-    
+
+
 }
 

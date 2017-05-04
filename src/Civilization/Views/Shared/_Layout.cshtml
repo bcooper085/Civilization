@@ -2,80 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            @*$('.hello-ajax').click(function () {
-                $.ajax({
-                    type: 'GET',
-                    url: '@Url.Action("HelloAjax")',
-                    success: function (result) {
-                        $('#result1').html(result);
-
-                    }
-
-                });
-
-            });
-
-
-            $('.display-object').click(function () {
+             $('.display-object').click(function () {
                 $.ajax({
                     type: 'GET',
                     dataType: 'json',
                     contentType: 'application/json',
                     url: '@Url.Action("DisplayObject")',
                     success: function (result) {
-                        var resultString = 'Id: ' + result.id + '<br>Name: ' + result.name + '<br>Details: ' + result.details;
-                        $('#result3').html(resultString);
+                        var resultString = 'Name: ' + event.name + '<br>Geography: ' + event.geography + '<br>Government: ' + event.government;
+                        $('#result1').html(resultString);
 
-                    }
-
-                });
-
-            });
-
-            $('.display-view').click(function () {
-                $.ajax({
-                    type: 'GET',
-                    dataType: 'html',
-                    url: '@Url.Action("DisplayViewWithAjax")',
-                    success: function (result) {
-                        $('#result4').html(result);
-
-                    }
-
-                });
-
-            });*@
-
-            $('.register').submit(function () {
-                event.preventDefault();
-                $.ajax({
-                    url: '@Url.Action("Register")',
-                    type: 'POST',
-                    dataType: 'html',
-                    data: $(this).serialize(),
-                    success: function (user, pass) {
-                        var resultMessage = 'Welcome!';
-                        $('#result6').html(resultMessage);
-                    }
-
-                });
-
-            });
-
-
-            $('.login').submit(function () {
-                event.preventDefault();
-                $.ajax({
-                    url: '@Url.Action("Login")',
-                    type: 'Get',
-                    dataType: 'json',
-                    data: $(this).serialize(),
-                    success: function (loginViewModel) {
-                        var resultMessage = 'Welcome! ' + username;
-                        $('#result6').html(resultMessage);
                     }
 
                 });
@@ -87,8 +27,23 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
+    <div class="container">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <h1 class="title">@Html.ActionLink("Return Home", "Index", "Home")</h1>
+            </div>
+            <div class="navbar-text navbar-right">
+                <h4 class="register-tab">
+                    @Html.ActionLink("Register", "Register", "Account")
+                </h4>
+                <h4 class="register-tab">
+                    @Html.ActionLink("Login", "Login", "Account")
+                </h4>
+            </div>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+     </div>
 </body>
 </html>

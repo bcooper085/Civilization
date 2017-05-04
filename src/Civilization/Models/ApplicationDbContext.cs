@@ -13,10 +13,10 @@ namespace Civilization.Models
         {
 
         }
-        public virtual DbSet<Event> Events { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Civilization;integrated security = True");
+            options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Civilization;integrated security=True");
         }
     }
 }

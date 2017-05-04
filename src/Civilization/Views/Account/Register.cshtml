@@ -1,18 +1,24 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using Civilization.ViewModels
+
 @model RegisterViewModel
 
-<form action="RegisterView" class="register">
-    <label for="usernameReg">Username:</label>
-    <input type="text" name="usernameReg" />
-    <label for="password1">Password:</label>
-    <input type="password" name="password1" />
-    <label for="passwordConfirm">Password:</label>
-    <input type="password" name="passwordConfirm" />
-    <button type="submit">Submit</button>
-</form>
-<div id="result5"></div>
+<h2>Register a new user</h2>
+<hr />
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
 
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password)
+
+    @Html.LabelFor(m => m.ConfirmPassword)
+    @Html.PasswordFor(m => m.ConfirmPassword)
+
+    <input type="submit" value="Register" class="waves-effect waves-light btn" />
+}

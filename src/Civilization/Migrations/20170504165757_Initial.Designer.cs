@@ -8,7 +8,7 @@ using Civilization.Models;
 namespace Civilization.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170503232748_Initial")]
+    [Migration("20170504165757_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
