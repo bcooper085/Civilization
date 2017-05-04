@@ -3,15 +3,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="GameStart" class="game-start">
-    Civilization Name:<input type="text" name="name">
-
+<form action="GameStart" class="game-start" id="GameStart">
+    <label for="name">Civilization Name:</label>
+    <input type="text" name="name">
+    <label for="gevlist">Government</label>
     <select name="govlist" form="GameStart">
         <option value="select">Select</option>
         <option value="communism">Communism</option>
         <option value="democracy">Democracy</option>
     </select>
-
+    <label for="geoglist">Geography</label>
     <select name="geoglist" form="GameStart">
         <option value="select">Select</option>
         <option value="coastal">Coastal</option>
